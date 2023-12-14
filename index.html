@@ -12,12 +12,12 @@
 <body>
 
     <div class="container mt-4">
-        <h1 class="mb-4">MongoDB API Control Panel</h1>
+        <h1 class="mb-4">Products Database</h1>
 
         <form id="addDataForm" class="mb-4">
             <div class="form-row">
                 <div class="col-md-6 mb-3">
-                    <label for="titleInput">Title:</label>
+                    <label for="titleInput">Name:</label>
                     <input type="text" class="form-control" id="titleInput" required>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -27,8 +27,8 @@
             </div>
 
             <div class="btn-group" role="group">
-                <button type="button" class="btn btn-primary" onclick="addData()">Add Data</button>
-                <button type="button" class="btn btn-info" onclick="getData()">Get All Data</button>
+                <button type="button" id="b1" class="btn btn-secondary" onclick="addData()">Add Data</button>
+                <button type="button" id="b2" class="btn btn-secondary" onclick="getData()">Get All Data</button>
             </div>
         </form>
 
@@ -37,10 +37,10 @@
         <table class="table table-bordered" id="dataTable">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Price</th>
-                    <th>Actions</th>
+                    <th class="colx">ID</th>
+                    <th class="colx">Title</th>
+                    <th class="colx">Price</th>
+                    <th class="colx">Actions</th>
                 </tr>
             </thead>
             <tbody></tbody>

@@ -3,6 +3,9 @@ body {
     margin: 20px;
 }
 
+.container mt-4{
+    border: 2px solid red;
+}
 #responseMessage {
     font-weight: bold;
     margin-top: 10px;
@@ -19,4 +22,20 @@ body {
 
 .form-control:invalid {
     border-color: #dc3545;
+}
+
+.colx{
+    background-color: lightskyblue;
+}
+
+.btn-group{
+    gap: 5px;
+}
+
+#b1{
+     border-radius: 10px;
+}
+#b2{
+    border-radius: 10px;
+    
 }

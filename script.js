@@ -6,7 +6,7 @@ let editingId = null;
 
 async function getData() {
     try {
-        const response = await fetch('https://restful-ap-iwith-mongo-db-i6rh.vercel.app/api/products');
+        const response = await fetch('https://mongodb-backendd.vercel.app/api/products');
         const data = await response.json();
 
         console.log('All data retrieved:', data);
@@ -22,7 +22,7 @@ function displayData(data) {
 
     data.forEach(item => {
         const row = tableBody.insertRow();
-        row.innerHTML = `<td>${item._id}</td><td>${item.title}</td><td>${item.price}</td>
+        row.innerHTML = `<td>${item._id}</td><td>${item.name}</td><td>${item.price}</td>
             <td>
                 <button class="btn btn-warning btn-sm" onclick="editData('${item._id}')">Edit</button>
                 <button class="btn btn-danger btn-sm" onclick="deleteData('${item._id}')">Delete</button>
@@ -31,11 +31,11 @@ function displayData(data) {
 }
 
 async function editData(id) {
-    const response = await fetch(`https://restful-ap-iwith-mongo-db-i6rh.vercel.app/api/products/${id}`);
+    const response = await fetch(`https://mongodb-backendd.vercel.app/api/products/${id}`);
     const data = await response.json();
 
     // Populate the modal fields
-    document.getElementById('editTitleInput').value = data.title;
+    document.getElementById('editTitleInput').value = data.name;
     document.getElementById('editPriceInput').value = data.price;
 
     // Store the editing ID for saving changes
@@ -46,22 +46,22 @@ async function editData(id) {
 }
 
 async function addData() {
-    const title = document.getElementById('titleInput').value;
+    const name = document.getElementById('titleInput').value;
     const price = document.getElementById('priceInput').value;
 
-    if (!title || !price) {
+    if (!name || !price) {
         alert('Please enter both title and price.');
         return;
     }
 
     if (editingId) {
         // If editing, perform PUT request to update data
-        const response = await fetch(`https://restful-ap-iwith-mongo-db-i6rh.vercel.app/api/products/${editingId}`, {
+        const response = await fetch(`https://mongodb-backendd.vercel.app/api/products/${editingId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ title, price }),
+            body: JSON.stringify({ name, price }),
         });
 
         handleResponse(response, 'Data updated successfully!', 'Failed to update data.');
@@ -71,12 +71,12 @@ async function addData() {
         $('#editModal').modal('hide');
     } else {
         // If not editing, perform POST request to add new data
-        const response = await fetch('https://restful-ap-iwith-mongo-db-i6rh.vercel.app/api/products', {
+        const response = await fetch('https://mongodb-backendd.vercel.app/api/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ title, price }),
+            body: JSON.stringify({ name, price }),
         });
 
         handleResponse(response, 'Data added successfully!', 'Failed to add data.');
@@ -90,7 +90,7 @@ async function deleteData(id) {
     const confirmDelete = confirm('Are you sure you want to delete this record?');
 
     if (confirmDelete) {
-        const response = await fetch(`https://restful-ap-iwith-mongo-db-i6rh.vercel.app/api/products/${id}`, {
+        const response = await fetch(`https://mongodb-backendd.vercel.app/api/products/${id}`, {
             method: 'DELETE',
         });
 
@@ -124,22 +124,22 @@ function clearForm() {
 function saveChanges() {
     // Implement the logic to save changes in the edit modal
     // You can reuse the logic from the addData function with some modifications
-    const title = document.getElementById('editTitleInput').value;
+    const name = document.getElementById('editTitleInput').value;
     const price = document.getElementById('editPriceInput').value;
 
-    if (!title || !price) {
+    if (!name || !price) {
         alert('Please enter both title and price.');
         return;
     }
 
     if (editingId) {
         // If editing, perform PUT request to update data
-        fetch(`https://restful-ap-iwith-mongo-db-i6rh.vercel.app/api/products/${editingId}`, {
+        fetch(`https://mongodb-backendd.vercel.app/api/products/${editingId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ title, price }),
+            body: JSON.stringify({ name, price }),
         })
             .then(response => {
                 if (!response.ok) {
