@@ -3,12 +3,88 @@ body {
     margin: 20px;
 }
 
-.container mt-4{
-    border: 2px solid red;
+.container.mt-4 {
+    border: 1px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    background-color: gainsboro;
 }
+
 #responseMessage {
     font-weight: bold;
     margin-top: 10px;
+}
+.row {
+    justify-content: center;
+}
+.card {
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow 0.3s;
+    margin-bottom: 20px;
+    margin: 30px;
+    background-color:cornsilk;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.icons-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card-title {
+    margin-bottom: 0.75rem;
+    margin-top: 20px;
+}
+
+.card:hover .icons-container {
+    opacity: 1;
+}
+
+.edit-icon,
+.delete-icon {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #007bff;
+    padding: 5px;
+}
+
+.edit-icon:hover,
+.delete-icon:hover {
+    color: #0056b3;
+}
+
+.add-data-card {
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    margin: auto;
+    max-width: 400px;
+    padding: 20px;
+    margin-top: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-data-card input {
+    margin-bottom: 10px;
 }
 
 .table th,
@@ -24,18 +100,25 @@ body {
     border-color: #dc3545;
 }
 
-.colx{
+.colx {
     background-color: lightskyblue;
 }
 
-.btn-group{
+.btn-group {
     gap: 5px;
+    margin-top: 15px;
 }
 
-#b1{
-     border-radius: 10px;
-}
-#b2{
+#b1 {
     border-radius: 10px;
-    
+}
+
+#b2 {
+    border-radius: 10px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }

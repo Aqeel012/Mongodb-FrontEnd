@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MongoDB API Control Panel</title>
+    <title>Products Web Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
@@ -16,14 +17,14 @@
 
         <form id="addDataForm" class="mb-4">
             <div class="form-row">
-                <div class="col-md-6 mb-3">
+              
                     <label for="titleInput">Name:</label>
                     <input type="text" class="form-control" id="titleInput" required>
-                </div>
-                <div class="col-md-6 mb-3">
+                
+                
                     <label for="priceInput">Price:</label>
                     <input type="number" class="form-control" id="priceInput" required>
-                </div>
+               
             </div>
 
             <div class="btn-group" role="group">
@@ -34,18 +35,9 @@
 
         <div id="responseMessage" class="mb-4"></div>
 
-        <table class="table table-bordered" id="dataTable">
-            <thead>
-                <tr>
-                    <th class="colx">ID</th>
-                    <th class="colx">Title</th>
-                    <th class="colx">Price</th>
-                    <th class="colx">Actions</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        
     </div>
+    <div class="row" id="cardContainer"></div>
 
     <!-- Edit Modal -->
     <div class="modal" id="editModal" tabindex="-1" role="dialog">
