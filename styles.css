@@ -1,0 +1,41 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+}
+
+.container mt-4{
+    border: 2px solid red;
+}
+#responseMessage {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.table th,
+.table td {
+    text-align: center;
+}
+
+.form-control:valid {
+    border-color: #28a745;
+}
+
+.form-control:invalid {
+    border-color: #dc3545;
+}
+
+.colx{
+    background-color: lightskyblue;
+}
+
+.btn-group{
+    gap: 5px;
+}
+
+#b1{
+     border-radius: 10px;
+}
+#b2{
+    border-radius: 10px;
+    
+}
